@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/VimleshS/run-my-errands/orderer/handlers"
 	"github.com/VimleshS/run-my-errands/setup"
@@ -19,6 +20,11 @@ var (
 )
 
 func main() {
+	port := os.Getenv("PORT")
+	if port == "" {
+		logrus.WithField("PORT", port).Fatal("$PORT must be set")
+	}
+
 	var err error
 	pgxpool, qc, err = setup.SetUp.PoolAndQueueConnection()
 	if err != nil {
@@ -31,5 +37,5 @@ func main() {
 	logrus.Info("Starting the application...")
 	router.HandleFunc("/authenticate", handlers.CreateTokenEndpoint).Methods("POST")
 	router.HandleFunc("/uploadlist", handlers.ValidateToken(handlers.GroceryUploadList)).Methods("POST")
-	logrus.Errorln(http.ListenAndServe(":12345", router))
+	logrus.Errorln(http.ListenAndServe(":"+port, router))
 }

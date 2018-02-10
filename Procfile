@@ -1,0 +1,2 @@
+web: orderer
+worker: dispatcher
