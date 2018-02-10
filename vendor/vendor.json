@@ -1,0 +1,121 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "9cl7+wv0GvxpQV+HOtV93F9pbmE=",
+			"path": "github.com/Sirupsen/logrus",
+			"revision": "89742aefa4b206dcf400792f3bd35b542998eb3b",
+			"revisionTime": "2017-08-22T13:27:46Z"
+		},
+		{
+			"checksumSHA1": "Fx9xMI58lpBwwaGTxsI5rKeX3xw=",
+			"path": "github.com/bgentry/que-go",
+			"revision": "04623be4201ec7abb8d6cd0f172a4c612e216cc4",
+			"revisionTime": "2018-02-08T22:57:42Z"
+		},
+		{
+			"checksumSHA1": "+TKtBzv23ywvmmqRiGEjUba4YmI=",
+			"path": "github.com/dgrijalva/jwt-go",
+			"revision": "dbeaa9332f19a944acb5736b4456cfcc02140e29",
+			"revisionTime": "2017-10-19T21:57:19Z"
+		},
+		{
+			"checksumSHA1": "g/V4qrXjUGG9B+e3hB+4NAYJ5Gs=",
+			"path": "github.com/gorilla/context",
+			"revision": "08b5f424b9271eedf6f9f0ce86cb9396ed337a42",
+			"revisionTime": "2016-08-17T18:46:32Z"
+		},
+		{
+			"checksumSHA1": "3HFUqdhX43kNPJe18WJWCVkthKI=",
+			"path": "github.com/gorilla/mux",
+			"revision": "2d5fef06b891c971b14aa6f71ca5ab6c03a36e0e",
+			"revisionTime": "2017-11-09T03:54:02Z"
+		},
+		{
+			"checksumSHA1": "ecmoC8r7DjVnhBv31uX9UxnN79Y=",
+			"path": "github.com/jackc/pgx",
+			"revision": "606697ffdfe6603013560dbc171656de57b4f542",
+			"revisionTime": "2018-02-05T22:20:27Z"
+		},
+		{
+			"checksumSHA1": "rsDmBQ/jGFUN2t6G4c3ohkKGKdQ=",
+			"path": "github.com/jackc/pgx/chunkreader",
+			"revision": "606697ffdfe6603013560dbc171656de57b4f542",
+			"revisionTime": "2018-02-05T22:20:27Z"
+		},
+		{
+			"checksumSHA1": "wArf/u0cmHsLafG2tOcjVUUXQBw=",
+			"path": "github.com/jackc/pgx/internal/sanitize",
+			"revision": "606697ffdfe6603013560dbc171656de57b4f542",
+			"revisionTime": "2018-02-05T22:20:27Z"
+		},
+		{
+			"checksumSHA1": "OCtOmvS8BLHQAyQXJ/Ub8QxKz0s=",
+			"path": "github.com/jackc/pgx/pgio",
+			"revision": "606697ffdfe6603013560dbc171656de57b4f542",
+			"revisionTime": "2018-02-05T22:20:27Z"
+		},
+		{
+			"checksumSHA1": "Fj02uVXJiJ8K2DxAwU9zRTj5Ppo=",
+			"path": "github.com/jackc/pgx/pgproto3",
+			"revision": "606697ffdfe6603013560dbc171656de57b4f542",
+			"revisionTime": "2018-02-05T22:20:27Z"
+		},
+		{
+			"checksumSHA1": "R48SikoDGwiKdZ5th5VFI5bD07Y=",
+			"path": "github.com/jackc/pgx/pgtype",
+			"revision": "606697ffdfe6603013560dbc171656de57b4f542",
+			"revisionTime": "2018-02-05T22:20:27Z"
+		},
+		{
+			"checksumSHA1": "FpgODaspeA2JtrcagXl9JRY/i88=",
+			"path": "github.com/mitchellh/mapstructure",
+			"revision": "a4e142e9c047c904fa2f1e144d9a84e6133024bc",
+			"revisionTime": "2018-02-03T10:28:30Z"
+		},
+		{
+			"checksumSHA1": "ET/qgGVknzZw+EENbjfznVvV9N0=",
+			"path": "github.com/pkg/errors",
+			"revision": "8842a6e0cc595d1cc9d931f6c875883967280e32",
+			"revisionTime": "2017-12-10T02:24:16Z"
+		},
+		{
+			"checksumSHA1": "1am4FGlEIZUzQmgO3z5ikrHKGnc=",
+			"path": "github.com/sendgrid/rest",
+			"revision": "a44614977dc1c40d4c7cb62caeb3bd145e974e7d",
+			"revisionTime": "2017-12-11T23:24:04Z"
+		},
+		{
+			"checksumSHA1": "0P3K5Qj3F7YQ4e6oVHyef2UFpi8=",
+			"path": "github.com/sendgrid/sendgrid-go",
+			"revision": "588320a743278a1824a54d232a7e9f36df6f6c99",
+			"revisionTime": "2018-02-07T00:05:56Z"
+		},
+		{
+			"checksumSHA1": "S8+5XJgd+oHImvyXkSQMZNPCi9w=",
+			"path": "github.com/sendgrid/sendgrid-go/helpers/mail",
+			"revision": "588320a743278a1824a54d232a7e9f36df6f6c99",
+			"revisionTime": "2018-02-07T00:05:56Z"
+		},
+		{
+			"checksumSHA1": "X1NTlfcau2XcV6WtAHF6b/DECOA=",
+			"path": "golang.org/x/crypto/ssh/terminal",
+			"revision": "94eea52f7b742c7cbe0b03b22f0c4c8631ece122",
+			"revisionTime": "2017-11-28T01:43:40Z"
+		},
+		{
+			"checksumSHA1": "lLFyv1lFFwDzmujqR9/hBV/pdQM=",
+			"path": "golang.org/x/sys/unix",
+			"revision": "53aa286056ef226755cd898109dbcdaba8ac0b81",
+			"revisionTime": "2017-12-08T15:22:27Z"
+		},
+		{
+			"checksumSHA1": "riTVymIu2BFphV6UlA73Fn9tmmU=",
+			"path": "golang.org/x/sys/windows",
+			"revision": "53aa286056ef226755cd898109dbcdaba8ac0b81",
+			"revisionTime": "2017-12-08T15:22:27Z"
+		}
+	],
+	"rootPath": "github.com/VimleshS/run-my-errands"
+}
