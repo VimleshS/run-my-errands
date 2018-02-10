@@ -56,3 +56,6 @@ The service app instantly connects you with trusted erranders to do your grocery
 
 
 #### You will receive a dispatch notification on your email.
+
+# Note
+There is no validation of JSON request, be assured that you are using correct well formed json request  
