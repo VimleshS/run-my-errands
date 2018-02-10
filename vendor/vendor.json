@@ -1,5 +1,10 @@
 {
 	"comment": "",
+	"heroku": {
+		"install": [
+			"./..."
+		]
+	},
 	"ignore": "test",
 	"package": [
 		{
