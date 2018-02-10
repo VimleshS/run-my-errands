@@ -7,16 +7,22 @@ import (
 	"strings"
 	"time"
 
+	"github.com/Sirupsen/logrus"
 	"github.com/VimleshS/run-my-errands/models"
 
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gorilla/context"
 )
 
-//CreateTokenEndpoint ...
+//CreateTokenEndpoint Authenticates user with email and password and generate hmac token valid for 15 minutes
 func CreateTokenEndpoint(w http.ResponseWriter, req *http.Request) {
 	var user models.User
-	_ = json.NewDecoder(req.Body).Decode(&user)
+	err := json.NewDecoder(req.Body).Decode(&user)
+	if err != nil {
+		json.NewEncoder(w).Encode(models.Exception{Message: err.Error()})
+		logrus.WithField("user", user).Info("Error decoding user")
+		return
+	}
 
 	// Create the Claims
 	claims := models.JwtClaimsInfo{
@@ -29,14 +35,16 @@ func CreateTokenEndpoint(w http.ResponseWriter, req *http.Request) {
 	}
 
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
-	tokenString, error := token.SignedString([]byte("secret"))
+	tokenString, error := token.SignedString([]byte(models.SignInSecret))
 	if error != nil {
-		fmt.Println(error)
+		json.NewEncoder(w).Encode(models.Exception{Message: err.Error()})
+		logrus.WithField("token", token).Info("Error signing keys")
+		return
 	}
 	json.NewEncoder(w).Encode(models.JwtToken{Token: tokenString})
 }
 
-//ValidateToken ...
+//ValidateToken it acts as a middleware validating the token and pipeling request further
 func ValidateToken(next http.HandlerFunc) http.HandlerFunc {
 	return http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
 		authorizationHeader := req.Header.Get("authorization")
@@ -47,7 +55,7 @@ func ValidateToken(next http.HandlerFunc) http.HandlerFunc {
 					if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
 						return nil, fmt.Errorf("There was an error")
 					}
-					return []byte("secret"), nil
+					return []byte(models.SignInSecret), nil
 				})
 				if error != nil {
 					json.NewEncoder(w).Encode(models.Exception{Message: error.Error()})
